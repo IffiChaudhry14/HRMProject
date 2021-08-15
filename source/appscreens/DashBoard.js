@@ -3,38 +3,45 @@ import { Header } from 'react-native-elements';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Icon1 from 'react-native-vector-icons/MaterialIcons'
-import Icon2 from 'react-native-vector-icons/Fontisto'
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 import MyCustomLeftComponent from '../customcomponents/MyCustomLeftComponent';
-export default class DashBoard extends Component {
+export default class DashBoard extends Component{
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <View style={styles.dbContainer}>
-                <View style={{ alignItems: 'center' }}>
+                <View >
                     <Header containerStyle={{
                         height:80,
-                        backgroundColor: '#4F9DBC',
                         justifyContent: 'space-around',
-                        paddingHorizontal:10
+                        paddingHorizontal:15,
+                        alignItems:'center'
+                        
                     }}
-                        leftComponent={<MyCustomLeftComponent />}
-                        centerComponent={{ text: 'DashBoard', style: { color: '#fff', fontFamily: 'Roboto-Bold', fontSize: 18 } }}
+                        leftComponent={<MyCustomLeftComponent {...this.props}/>}
+                        centerComponent={{ text: 'Dashboard', style: { color: '#fff', fontFamily: 'Ubuntu-Bold', fontSize: 18 } }}
                     />
                 </View>
                 <View style={styles.ImageView1}>
                     <Image source={require('../../assets/images/logo.png')}
                         style={styles.Imagelogo} />
                 </View>
+
                 <View style={styles.dashboardContainer}>
                     <View style={styles.dashbaordItem} >
-                        <TouchableOpacity style={styles.touchView}>
+                        <TouchableOpacity onPress={()=>this.props.navigation.navigate('AppDashboard')}
+                        style={styles.touchView}>
                             <Icon name="notifications-sharp" size={50} color={'#FFFFFF'} style={{ backgroundColor: '#022C43', borderRadius: 30, padding: 5, width: 60 }} />
                             <Text style={styles.ItemText}>Notifications</Text>
                         </TouchableOpacity>
                     </View>
+                    <View></View>
                     <View style={styles.dashbaordItem}>
                         <TouchableOpacity style={styles.touchView}>
-                            <Icon name="menu-sharp" size={50} color={'#FFFFFF'} style={{ backgroundColor: '#022C43', borderRadius: 30, padding: 5, width: 60 }} />
-                            <Text style={styles.ItemText}>Annoucements</Text>
+                            <Icon2 name="calendar-clock" size={50} color={'#FFFFFF'} style={{ backgroundColor: '#022C43', borderRadius: 30, padding: 5, width: 60 }} />
+                            <Text style={styles.ItemText}>Attendance</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -42,13 +49,13 @@ export default class DashBoard extends Component {
                     <View style={styles.dashbaordItem} >
                         <TouchableOpacity style={styles.touchView}>
                             <Icon1 name="person" size={50} color={'#FFFFFF'} style={{ backgroundColor: '#022C43', borderRadius: 30, padding: 5, width: 60 }} />
-                            <Text style={styles.ItemText}>Employee Management</Text>
+                            <Text style={styles.ItemText}>Employee Details</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.dashbaordItem}>
                         <TouchableOpacity style={styles.touchView}>
                             <Icon1 name="add-task" size={50} color={'#FFFFFF'} style={{ backgroundColor: '#022C43', borderRadius: 30, padding: 5, width: 60 }} />
-                            <Text style={styles.ItemText}>Create Task</Text>
+                            <Text style={styles.ItemText}>My Tasks</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -62,20 +69,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
     },
     ImageView1: {
-        marginTop: 10,
+        marginTop: 50,
         alignItems: 'center',
         marginHorizontal: 10,
-    },
-    Imagelogo: {
-        height: 200,
-        width: '100%'
     },
     dashboardContainer: {
         elevation: 10,
         justifyContent: 'space-between',
         flexDirection: 'row',
         marginHorizontal: 25,
-        marginVertical: 10,
+        marginTop:30,
     },
     dashbaordItem: {
         elevation: 3,
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         width: '45%'
     },
     ItemText: {
-        padding: 10,
+        paddingVertical: 10,
         color: '#2F2F2F',
         fontFamily: 'Montserrat-Medium',
         fontSize: 14,
