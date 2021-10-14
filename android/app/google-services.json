@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "217552337705",
+    "project_id": "hrmproject-c1c92",
+    "storage_bucket": "hrmproject-c1c92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217552337705:android:1a2fd3653f4a34e2785538",
+        "android_client_info": {
+          "package_name": "com.hrmproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217552337705-53tm5vkhn9iigh9fpgtl49okje1sqgep.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hrmproject",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "217552337705-ddi7bs65tucgv11ecfnu5tsr34tktqiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh-y52Q3m1mIDOxI4fVJIXvP99f6fW73U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217552337705-ddi7bs65tucgv11ecfnu5tsr34tktqiq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

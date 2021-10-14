@@ -8,4 +8,5 @@ import { MainStackNavigator } from "./source/navigations/MainStackNavigator";
     </NavigationContainer>
   );
 }
+
 export default App;
